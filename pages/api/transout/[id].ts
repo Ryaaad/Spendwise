@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import {getHandler,patchHandler,deleteHandler} from '../../../conrollers/userControler'
+import {getHandler,patchHandler,deleteHandler} from '../../../conrollers/SpentController'
 
 export default async function handler(
     req: NextApiRequest,
@@ -8,7 +8,7 @@ export default async function handler(
     if (req.method === 'GET') return getHandler(req, res);
     if(req.method === 'PUT') return patchHandler(req, res);
     if(req.method === 'DELETE') return deleteHandler(req, res);
-    
+
     res
       .status(400)
       .json({ status: 400, message: "we can't handle this request" });
