@@ -12,7 +12,9 @@ CREATE TABLE "User" (
 CREATE TABLE "Product" (
     "idPR" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     "NamePR" TEXT NOT NULL,
-    "Icone" TEXT NOT NULL
+    "Icone" TEXT NOT NULL,
+    "userId" INTEGER NOT NULL,
+    CONSTRAINT "Product_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
 -- CreateIndex

@@ -11,16 +11,19 @@ datasource db {
 }
 
 model User {
-  id       Int    @id @default(autoincrement())
+  id       Int       @id @default(autoincrement())
   Name     String
-  Email    String @unique
+  Email    String    @unique
   LastName String
   Password String
   Img      String
+  Product  Product[]
 }
 
 model Product {
   idPR   Int    @id @default(autoincrement())
   NamePR String
   Icone  String
+  userId Int
+  user   User   @relation(fields: [userId], references: [id])
 }
