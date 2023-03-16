@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import {getAllHandler,postHandler} from '../../../conrollers/userControler'
+import {getAllHandler,postHandler} from '../../../conrollers/producontroller'
 
 export default async function handler(
     req: NextApiRequest,

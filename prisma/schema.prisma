@@ -18,3 +18,9 @@ model User {
   Password String
   Img      String
 }
+
+model Product {
+  idPR   Int    @id @default(autoincrement())
+  NamePR String
+  Icone  String
+}

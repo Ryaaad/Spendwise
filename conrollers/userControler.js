@@ -65,9 +65,6 @@ export async function patchHandler(req,res){
            id:Number(id)
          },
          data:req.body,
-        //  include:{
-        //   category:true
-        //  }
         })
          res.status(201).json({ status:201,data:user});
     }
