@@ -105,7 +105,7 @@ export async function deleteHandler(req, res) {
       console.error(error);
       return res.status(500).json({ status: 500, message: "An error occurred" });
     }
-  }
+}
   
 
   export async function getFromUserHandler(req,res){
