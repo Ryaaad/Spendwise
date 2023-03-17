@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import {getHandler,patchHandler,deleteHandler} from '../../../../conrollers/produtController'
+import {getHandler,patchHandler,deleteHandler} from '../../../conrollers/AchievmentController'
 
 export default async function handler(
     req: NextApiRequest,

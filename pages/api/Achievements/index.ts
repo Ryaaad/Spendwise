@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import {getAllHandler,postHandler} from '../../../conrollers/produtController'
+import {getAllHandler,postHandler} from '../../../conrollers/AchievmentController'
 
 export default async function handler(
     req: NextApiRequest,
