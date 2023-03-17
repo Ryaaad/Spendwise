@@ -19,6 +19,8 @@ model User {
   Img      String
   Product  Product[]
   Spent    Spent[]
+  Earn     Earn[]
+  Have     Have[]
 }
 
 model Product {
@@ -38,4 +40,28 @@ model Spent {
   Moneyout Float
   user     User     @relation(fields: [userId], references: [id])
   product  Product  @relation(fields: [idPR], references: [idPR])
+}
+
+model Achievement {
+  idAch   Int    @id @default(autoincrement())
+  nameAch String
+  Img     String
+  Have    Have[]
+}
+
+model Earn {
+  idEarn  Int    @id @default(autoincrement())
+  userId  Int
+  MoneyIn Int
+  Cause   String
+  user    User   @relation(fields: [userId], references: [id])
+}
+
+model Have {
+  userId      Int
+  AchiId      Int
+  user        User        @relation(fields: [userId], references: [id])
+  achievement Achievement @relation(fields: [AchiId], references: [idAch])
+
+  @@id([userId, AchiId])
 }

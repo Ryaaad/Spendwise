@@ -28,5 +28,31 @@ CREATE TABLE "Spent" (
     CONSTRAINT "Spent_idPR_fkey" FOREIGN KEY ("idPR") REFERENCES "Product" ("idPR") ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
+-- CreateTable
+CREATE TABLE "Achievement" (
+    "idAch" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "nameAch" TEXT NOT NULL,
+    "Img" TEXT NOT NULL
+);
+
+-- CreateTable
+CREATE TABLE "Earn" (
+    "idEarn" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "userId" INTEGER NOT NULL,
+    "MoneyIn" INTEGER NOT NULL,
+    "Cause" TEXT NOT NULL,
+    CONSTRAINT "Earn_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+);
+
+-- CreateTable
+CREATE TABLE "Have" (
+    "userId" INTEGER NOT NULL,
+    "AchiId" INTEGER NOT NULL,
+
+    PRIMARY KEY ("userId", "AchiId"),
+    CONSTRAINT "Have_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User" ("id") ON DELETE RESTRICT ON UPDATE CASCADE,
+    CONSTRAINT "Have_AchiId_fkey" FOREIGN KEY ("AchiId") REFERENCES "Achievement" ("idAch") ON DELETE RESTRICT ON UPDATE CASCADE
+);
+
 -- CreateIndex
 CREATE UNIQUE INDEX "User_Email_key" ON "User"("Email");
