@@ -107,3 +107,26 @@ export async function deleteHandler(req, res) {
     }
   }
   
+
+  export async function getFromUserHandler(req,res){
+    try{
+        const {id}=req.query
+        if(!id) return res.status(400).json({status:400,message:"INvalid id"})
+        const Earn=await prisma.Earn.findMany({   
+            where:{
+            userId:id*1
+           }
+        });
+    if(!Earn) return res.status(404).json({status:404,message:"this user hasnt Earn anything "})
+    return res.status(200).json({
+        status:200,
+        data:Earn
+    })
+    }
+    catch(err){
+        console.error(err)
+        return res.status(500).json({status:500,message:"an error occurred"})
+    }
+
+}
+ 

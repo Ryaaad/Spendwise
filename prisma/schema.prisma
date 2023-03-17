@@ -50,11 +50,12 @@ model Achievement {
 }
 
 model Earn {
-  idEarn  Int    @id @default(autoincrement())
+  idEarn  Int      @id @default(autoincrement())
   userId  Int
   MoneyIn Int
   Cause   String
-  user    User   @relation(fields: [userId], references: [id])
+  Date    DateTime @default(now())
+  user    User     @relation(fields: [userId], references: [id])
 }
 
 model Have {
