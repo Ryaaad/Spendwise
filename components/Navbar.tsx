@@ -6,7 +6,7 @@ import Accounts from '../public/Accounts.png'
 const Navbar = () => {
     return ( 
         <>
-        <div  style={{boxShadow:" 0px 4px 2px 0px rgba(0, 0, 0, 0.01)"}} className="flex h-[80px] px-20 justify-between items-center lgg:px-12 mdd:px-8 smm:hidden xss:hidden ">
+        <div  style={{boxShadow:" 0px 4px 2px 0px rgba(0, 0, 0, 0.01)"}} className="flex h-[75px] px-20 justify-between items-center lgg:px-12 mdd:px-8 smm:hidden xss:hidden ">
          <h1 className="text-3xl font-bold text-[#0038D9] lgg:text-[28px] mdd:text-2xl " > Spendwise</h1>
        
        <div className="flex gap-8 items-center text-lg  font-semibold  text-[#A5A5A5] lgg:text-base lgg:gap-6 mdd:gap-5 mdd:text-sm ">
